@@ -1,0 +1,221 @@
+{
+	"info": {
+		"_postman_id": "d518cb46-af7d-4eea-8a51-0a4a8944ff36",
+		"name": "Task_management_API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38276720"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"test_user1\",\n    \"email\":\"test_user1@gmail.com\",\n    \"password\":\"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/auth/signup",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"test_user1@gmail.com\",\n    \"password\":\"123456\"\n}\n\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/auth/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user_profile",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/auth/me",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"me"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tasks",
+			"item": [
+				{
+					"name": "Create_task",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"new task added\",\n    \"description\": \"get task according to the user\",\n    \"status\": \"completed\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/task",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"task"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "all_tasks",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/task",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"task"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update_task",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"task title updated\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/task/67f5f3e1d3a9c47136f97006",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"task",
+								"67f5f3e1d3a9c47136f97006"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete_task",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/task/67f5f3e1d3a9c47136f97006",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"task",
+								"67f5f3e1d3a9c47136f97006"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2Y1ZWE3NjgwZDdhM2JiZmFkZGNiNDEiLCJpYXQiOjE3NDQxNzE1ODQsImV4cCI6MTc0NDI1Nzk4NH0.D37iKk5J8gGYEvvMS64odFRKkdhDiJI64RZYIhBj34g",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "https://task-management-api-weld-psi.vercel.app",
+			"type": "string"
+		}
+	]
+}
