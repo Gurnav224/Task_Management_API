@@ -7,7 +7,7 @@ export const signup = async (req, res) => {
     const isExist = await User.findOne({ email });
 
     if (isExist) {
-      return res.status(400).json({ error: "Email already registered" });
+      return res.status(409).json({ error: "Email already registered" });
     }
 
     const user = new User({ username, password, email });
@@ -53,7 +53,10 @@ export const login = async (req, res) => {
 
 export const getUserDetails =  async (req, res) => {
     try {
-        const user = await User.find({_id:req.user._id}).select("username  email createdAt updatedAt");
+        const user = await User.findOne({_id:req.user._id}).select("username  email createdAt updatedAt");
+        if (!user) {
+          return res.status(404).json({ error: "user not found" });
+        }
        res.status(200).json({message:'welcome to profile', user})
     } catch (error) {
         console.error(error)
