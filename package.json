@@ -1,0 +1,39 @@
+{
+  "name": "task_management_api",
+  "version": "1.0.0",
+  "description": "Task management api",
+  "keywords": [
+    "nodejs",
+    "mongodb",
+    "express.js"
+  ],
+  "homepage": "https://github.com/Gurnav224/Task_Management_API#readme",
+  "bugs": {
+    "url": "https://github.com/Gurnav224/Task_Management_API/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gurnav224/Task_Management_API.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon index.js development"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.13.2",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}
